@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(var(--background-top), var(--background-bottom));
+    animation: background-color 30s linear infinite;
+}
+
+.buildings {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: url("buildings.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: translateY(2px);
+    bottom: 0;
+}
+
+@property --background-top {
+    syntax: '<color>';
+    initial-value: #90dffe;
+    inherits: false;
+}
+  
+@property --background-bottom {
+    syntax: '<color>';
+    initial-value: #38a3d1;
+    inherits: false;
+}
+
+@keyframes background-color {
+    0% {
+        --background-top: #90dffe;
+        --background-bottom: #38a3d1;
+    }
+    23.5% {
+        --background-top: #90dffe;
+        --background-bottom: #38a3d1;
+    }
+    25% {
+        --background-top: #00000c;
+        --background-bottom: #00000c;
+    }
+    73.5% {
+        --background-top: #00000c;
+        --background-bottom: #00000c;
+    }
+    75% {
+        --background-top: #90dffe;
+        --background-bottom: #38a3d1;
+    }
+    100% {
+        --background-top: #90dffe;
+        --background-bottom: #38a3d1;
+    }
+}
+
+.rotation {
+    width: 100%;
+    height: 100vh;
+    bottom: 0;
+    transform: translateY(100vh);
+}
+
+.circle {
+    width: 1700px;
+    height: 1700px;
+    position: absolute;
+    left: 50%;
+    margin-top: -850px;
+    margin-left: -850px;
+    border-radius: 50%;
+    padding: 0px;
+    animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+.sun {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background-color: #fce586;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.moon {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%) rotate(75deg);
+}
